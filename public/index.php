@@ -3,18 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-//require '../App/Controllers/Posts.php';
 require_once '../vendor/autoload.php';
-//require '../Core/Router.php';
-
-spl_autoload_register(function ($class){
-    $root = dirname(__DIR__);
-    $file = $root . '/' . str_replace('\\', '/', $class) . '.php';
-    if(is_readable($file))
-    {
-        require $file;
-    }
-});
 
 $router = new Core\Router;
 
