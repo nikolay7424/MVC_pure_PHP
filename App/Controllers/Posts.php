@@ -2,16 +2,19 @@
 
 namespace App\Controllers;
 
+use Core\View;
+
 class Posts extends \Core\Controller
 {
     public function indexAction()
     {
-        echo 'index action in posts controller';
+/*        echo 'index action in posts controller';
         echo '<p>'
             . 'query string params are: <pre>'
             . htmlspecialchars(print_r($_GET, true)
             . '</pre></p>'
-            );
+            );*/
+        View::renderTemplate('Posts/index.html');
     }
 
     public function addNewAction()

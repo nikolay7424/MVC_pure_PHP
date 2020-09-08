@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
 //require '../App/Controllers/Posts.php';
-
+require_once '../vendor/autoload.php';
 //require '../Core/Router.php';
 
 spl_autoload_register(function ($class){

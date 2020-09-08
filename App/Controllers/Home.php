@@ -3,12 +3,21 @@
 
 namespace App\Controllers;
 
+use \Core\View;
 
 class Home extends \Core\Controller
 {
     public function indexAction()
     {
-        echo 'index method of home controller';
+/*        View::render('Home/index.php', [
+            'name' => 'Dave',
+            'colours' => ['red', 'green', 'blue']
+        ]);*/
+
+        View::renderTemplate('Home/index.html', [
+            'name' => 'Dave',
+            'colours' => ['red', 'green', 'blue']
+        ]);
     }
 
     protected function before()
