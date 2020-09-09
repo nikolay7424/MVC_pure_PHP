@@ -3,18 +3,16 @@
 namespace App\Controllers;
 
 use Core\View;
+use App\Models\Post;
 
 class Posts extends \Core\Controller
 {
     public function indexAction()
     {
-/*        echo 'index action in posts controller';
-        echo '<p>'
-            . 'query string params are: <pre>'
-            . htmlspecialchars(print_r($_GET, true)
-            . '</pre></p>'
-            );*/
-        View::renderTemplate('Posts/index.html');
+        $posts = Post::getAll();
+        View::renderTemplate('Posts/index.html', [
+            'posts' => $posts
+        ]);
     }
 
     public function addNewAction()
