@@ -33,7 +33,8 @@ abstract class Controller
                 $this->after();
             }
         }else{
-            echo "Method $method not found in" . get_class($this) .  "controller.";
+            throw new \Exception("Method $method not found in" .
+                get_class($this) .  "controller.");
         }
     }
 
